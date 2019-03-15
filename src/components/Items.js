@@ -48,7 +48,8 @@ class Items extends Component {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
+        "Access-Control-Allow-Origin": "*"
       },
       body
     })
