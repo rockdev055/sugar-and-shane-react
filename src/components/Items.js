@@ -13,10 +13,9 @@ const override = css`
   margin: 0 auto;
   border-color: red;
 `
-console.log(process.env.NODE_ENV)
 
 const API_URL =
-  "localhost" === "localhost"
+  process.env.NODE_ENV === "development"
     ? process.env.REACT_APP_RAILS_API_DEV_URL
     : process.env.REACT_APP_RAILS_API_PROD_URL
 
