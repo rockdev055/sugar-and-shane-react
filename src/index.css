@@ -20,7 +20,7 @@ code {
 }
 
 .bgimage:after {
-  background: url("./images/hero.jpg");
+  background: url("./images/hero2.jpg");
   content: "";
   background-repeat: no-repeat;
   background-position: center;
