@@ -13,10 +13,10 @@ const override = css`
   margin: 0 auto;
   border-color: red;
 `
-const hostname = window && window.location && window.location.hostname
+console.log(process.env.NODE_ENV)
 
 const API_URL =
-  hostname === "localhost"
+  "localhost" === "localhost"
     ? process.env.REACT_APP_RAILS_API_DEV_URL
     : process.env.REACT_APP_RAILS_API_PROD_URL
 
