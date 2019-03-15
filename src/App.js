@@ -5,6 +5,11 @@ import Home from "./components/Home"
 import NewItem from "./components/NewItem"
 import Items from "./components/Items"
 
+const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3001"
+    : "https://evening-crag-18234.herokuapp.com"
+
 class App extends Component {
   state = {
     stores: [],
@@ -13,8 +18,8 @@ class App extends Component {
   componentDidMount() {
     const that = this
     async function getStoresAndBrands() {
-      const storePromise = fetch("http://localhost:3001/stores.json")
-      const brandPromise = fetch("http://localhost:3001/brands.json")
+      const storePromise = fetch(`${API_URL}/stores.json`)
+      const brandPromise = fetch(`${API_URL}/brands.json`)
       const [stores, brands] = await Promise.all(
         [storePromise, brandPromise].map(p => p.then(res => res.json()))
       )

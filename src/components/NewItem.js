@@ -48,7 +48,6 @@ export default class NewItem extends Component {
         name: this.state.brandName
       }
     }
-    console.log(API_URL)
     const body = JSON.stringify({ item })
     const res = await fetch(`${API_URL}/items`, {
       method: "POST",
@@ -59,6 +58,7 @@ export default class NewItem extends Component {
       body
     })
     const newItem = await res.json()
+    this.props.history.push("/items")
   }
   render() {
     return (
