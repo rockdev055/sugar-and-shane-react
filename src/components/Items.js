@@ -16,8 +16,8 @@ const override = css`
 
 const API_URL =
   process.env.NODE_ENV === "development"
-    ? process.env.REACT_APP_RAILS_API_DEV_URL
-    : process.env.REACT_APP_RAILS_API_PROD_URL
+    ? "http://localhost:3001"
+    : "https://evening-crag-18234.herokuapp.com"
 
 class Items extends Component {
   state = {
